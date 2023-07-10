@@ -1,2 +1,2 @@
-#!/bin/bash
-#!/usr/bin/python3 -c "$PYFILE"
+#!/usr/bin/python3 
+python3 -i "$PYFILE"
