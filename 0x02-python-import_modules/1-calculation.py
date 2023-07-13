@@ -6,7 +6,7 @@ if __name__ == "__main__":
     result_add = add(a, b)
     result_sub = sub(a, b)
     result_mul = mul(a, b)
-    result_div = mul(a, b)
+    result_div = div(a, b)
 
     print("{} + {} = {}".format(a, b, result_add))
     print("{} - {} = {}".format(a, b, result_sub))
