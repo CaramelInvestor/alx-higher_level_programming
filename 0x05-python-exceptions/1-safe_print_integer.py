@@ -14,10 +14,8 @@ You are not allowed to use type()'''
 
 def safe_print_integer(value):
     '''A function that prints an integer with "{:d}".format().'''
-    if isinstance(value, int):
-        try:
-            print("{:d}".format(value))
-            return True
-        except ValueError:
-            print()
-            return False
+    try:
+        print("{:d}".format(value))
+        return True
+    except (ValueError, TypeError):
+        return False
