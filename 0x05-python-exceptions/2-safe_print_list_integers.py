@@ -19,13 +19,15 @@ def safe_print_list_integers(my_list=[], x=0):
     '''A function that prints the first x elements
     of a list and only integers.'''
     printed_integer = 0
-    for idx in range(x):
+    idx = 0
+    while True:
         try:
-            if isinstance(my_list[idx], int):
-                print("{:d}".format(my_list[idx]), end="")
+            if idx < x:
+                print("{:d}".format(my_list[idx]), end='')
+                idx += 1
                 printed_integer += 1
-        except IndexError:
-            break
-
-    print()
-    return printed_integer
+            else:
+                print()
+                return printed_integer
+        except (ValueError, TypeError):
+            idx += 1
