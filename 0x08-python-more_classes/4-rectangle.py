@@ -81,7 +81,9 @@ class Rectangle:
         return rectangle_str.rstrip()
 
     def __repr__(self):
-        """Return the string representation of the Rectangle."""
+        """
+        Return the string representation of the Rectangle.
+        """
         rect = "Rectangle(" + str(self.__width)
         rect += ", " + str(self.__height) + ")"
-        return (rect)
+        return rect
