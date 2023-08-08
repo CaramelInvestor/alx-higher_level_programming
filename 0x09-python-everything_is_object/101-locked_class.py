@@ -8,6 +8,7 @@ except if the new instance attribute is called first_name
 
 class LockedClass:
     """
-    class created __slots__ is used to prevent the dynamic creation of attributes
+    class created __slots__ is used to prevent
+    the dynamic creation of attributes
     """
     __slots__ = ["first_name"]
