@@ -14,4 +14,5 @@ class MyList(list):
         defined method that prints the list,
         but sorted in ascending order
         """
-        return sorted(self)
+        isinstance(list, int)
+        return(sorted(self))
