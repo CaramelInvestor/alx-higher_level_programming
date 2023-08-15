@@ -2,11 +2,12 @@
 """
 This module returns the dictionary description with simple data
 structure (list, dictionary, string, integer and boolean)
-for JSON serialization of an object"""
+for JSON serialization of an object
+"""
 
 
 def class_to_json(obj):
     """
     Serialize a class object to a dictionary
     """
-    return obj.__dict___
+    return obj.__dict__
