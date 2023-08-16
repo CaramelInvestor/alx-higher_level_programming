@@ -15,7 +15,7 @@ class Square(Rectangle):
         Instantiation of private attributes checks if size
         is a positive integer
         """
-        self.___size = size
+        self.__size = size
         super().__init__(self.__size, self.__size)
 
     def __str__(self):
