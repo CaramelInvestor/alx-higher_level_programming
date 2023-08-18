@@ -4,7 +4,7 @@ The rectangle class inherits from Base class
 """
 
 
-Base = __import__('base.py').Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -23,57 +23,74 @@ class Rectangle(Base):
 		self.y = y
 
 	@property
-	def width(self, width):
+	def width(self):
 		"""
 		getter method for private width attribute
 		"""
 		return self.__width
 
 	@width.setter
-	def width(self, width):
+	def width(self, value):
 		"""
 		setter method for private width attribute
 		"""
-		self.__width = width
+		self.validator("width", value)
+		self.__width = value
 
 	@property
-        def height(self, height):
+	def height(self):
                 """
                 getter method for private height attribute
                 """
                 return self.__height
 
-        @height.setter
-        def height(self, height):
+	@height.setter
+	def height(self, value):
                 """
                 setter method for private height attribute
                 """
-                self.__height = height
+	self.validator("height", value)
+        self.__height = value
 
 	@property
-        def x(self, x):
+	def x(self):
                 """
 		getter method for private x attribute
                 """
                 return self.__x
 
-        @x.setter
-        def x(self, x):
+	@x.setter
+	def x(self, value):
                 """
                 setter method for private x attribute
                 """
-                self.__x = x
+		self.validator("x", value)
+		self.__x = value
 
 	@property
-        def y(self, y):
+	def y(self):
                 """
                 getter method for private y attribute
                 """
                 return self.__y
 
-        @y.setter
-        def y(self, y):
+	@y.setter
+	def y(self, value):
                 """
                 setter method for private y attribute
                 """
-                self.__y = y
+		self.validator("y", value)
+                self.__y = value
+
+	@staticmethod
+	def validator(attribute, value):
+		"""
+		method that validates all setter methods
+		"""
+		if type(value) != int:
+			raise TypeError("{} must be an integer".format(attribute))
+		if attribute == "weight" or attribute == "height":
+			if value <= 0:
+				raise ValueError("{} must be > 0".format(attribute))
+		elif value < 0:
+			raise ValueError("{} must be >= 0".format(attribute))
