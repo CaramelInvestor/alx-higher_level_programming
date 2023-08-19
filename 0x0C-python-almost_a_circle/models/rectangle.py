@@ -105,5 +105,31 @@ class Rectangle(Base):
         """
         method that prints the rectangle in # char
         """
+        for char in range(self.y):
+            print()
         for char in range(self.height):
-            print('#' * self.width)
+            print(' ' * self.x + '#' * self.width)
+
+    def __str__(self):
+        """
+        overridding the str method
+        """
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                self.x, self.y, self.width, self.height))
+
+    def update(self, *args):
+        """
+        method that assigns an argument to each attribute
+        """
+        if len(args) == 0:
+            for key, val in kwargs.items():
+                self.__setattr__(key, val)
+            return
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        except IndexError:
+            pass
