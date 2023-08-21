@@ -89,11 +89,11 @@ class Rectangle(Base):
         """
         if type(value) != int:
             raise TypeError("{} must be an integer".format(attribute))
-        if attribute == "weight" or attribute == "height":
-            if value <= 0:
-                raise ValueError("{} must be > 0".format(attribute))
-        elif value < 0:
-            raise ValueError("{} must be >= 0".format(attribute))
+        if attribute == "x" or attribute == "y":
+            if value < 0:
+                raise ValueError("{} must be >= 0".format(attribute))
+        elif value <= 0:
+            raise ValueError("{} must be > 0".format(attribute))
 
     def area(self):
         """
