@@ -1,9 +1,9 @@
 #!/usr/bin/node
 const args = process.argv[2];
-if (args.length === 0 || isNaN(args[0])) {
+if (args === undefined || isNaN(args[0])) {
   console.log('Missing size');
 } else {
-  const x = parseInt(args[0], 10);
+  const x = parseInt(args, 10);
 
   for (let i = 0; i < x; i++) {
     let line = '';
