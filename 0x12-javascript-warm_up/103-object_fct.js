@@ -1,34 +1,22 @@
 #!/usr/bin/node
-// let myObject = {
-//   type: 'object',
-//   value: 12
-// };
-// console.log(myObject);
-
-// myObject.incr = function () {
-//   this.value++;
-// };
-
-// myObject.incr();
-// console.log(myObject);
-
-// myObject.incr();
-// console.log(myObject);
-
-// myObject.incr();
-// console.log(myObject);
-
-const myObject = {
+let myObject = {
   type: 'object',
   value: 12
 };
 console.log(myObject);
-myObject.incr = function () {
-  this.value++;
+myObject = {
+  type: 'object',
+  value: 12,
+  incr: function () {
+    this.value += 1;
+  }
 };
+
 myObject.incr();
 console.log(myObject);
+
 myObject.incr();
 console.log(myObject);
+
 myObject.incr();
 console.log(myObject);
