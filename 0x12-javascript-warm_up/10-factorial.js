@@ -9,6 +9,6 @@ function printFactorial (n) {
   }
 }
 
-const args = process.argv[2];
+const args = process.argv[2]
 
 console.log(printFactorial(args));
