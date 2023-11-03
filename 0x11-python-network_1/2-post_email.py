@@ -4,7 +4,7 @@ sends a POST request to the passed URL with the email
 as a parameter, and displays the body of the response (decoded in utf-8)"""
 
 import sys
-from urllib import request, parse, urlopen
+from urllib import request, parse
 
 if __name__ == "__main__":
     url = sys.argv[1]
@@ -13,5 +13,5 @@ if __name__ == "__main__":
     data = data.encode('ascii')
 
     req = request.Request(url, data)
-    with urlopen(req) as response:
+    with request.urlopen(req) as response:
         print(response.read().decode('utf-8'))
