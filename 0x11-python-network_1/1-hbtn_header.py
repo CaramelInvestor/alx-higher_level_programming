@@ -9,6 +9,9 @@ url = sys.argv[1]
 req = urllib.request.Request(url)
 
 with urllib.request.urlopen(req) as response:
-    header = response.info()
-    x_request_id = header.get("X-Request-Id")
-    print(x_request_id)
+    x_request_id = response.getheader('X-Request-Id')
+    if x_request_id:
+        print(x_request_id)
+    # header = response.info()
+    # x_request_id = header.get("X-Request-Id")
+    # print(x_request_id)
