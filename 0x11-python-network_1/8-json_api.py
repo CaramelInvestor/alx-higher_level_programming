@@ -18,6 +18,6 @@ if __name__ == "__main__":
         if isinstance(response_data, dict) and "id" in response_data and "name" in response_data:
             print(f"[{response_data['id']}] {response_data['name']}")
         else:
-            print("Not a valid JSON")
+            print("No result")
     except ValueError:
-        print("No result")
+        print("Not a valid JSON")
