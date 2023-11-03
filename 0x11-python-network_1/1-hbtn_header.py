@@ -3,12 +3,12 @@
 and displays the value of the X-Request-Id variable found in the
 header of the response"""
 
-import sys, urllib.request
+import sys
+from urllib.request import urlopen
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    req = urllib.request.Request(url)
 
-    with urllib.request.urlopen(req) as response:
+    with urlopen(url) as response:
         header = response.info()
         print(header.get('X-Request-Id'))
