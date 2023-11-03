@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-from urllib.request import Request, urlopen
+from urllib import request
 
 if __name__ == "__main__":
-    request = Request('https://alx-intranet.hbtn.io/status')
-    with urlopen(request) as response:
+    request = request.Request('https://alx-intranet.hbtn.io/status')
+    with request.Request.urlopen(request) as response:
         content = response.read()
         print("Body response:")
         print(f"\t- type: {type(content)}")
