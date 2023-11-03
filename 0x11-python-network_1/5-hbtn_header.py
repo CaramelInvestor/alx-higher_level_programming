@@ -9,5 +9,4 @@ if __name__ == "__main__":
     # request = request.Request(url)
     with urlopen(url) as response:
         header = response.info()
-        print(header)
-        # print(header.get('X-Request-Id'))
+        print(header.get('X-Request-Id'))
