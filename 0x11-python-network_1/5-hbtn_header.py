@@ -7,6 +7,6 @@ if __name__ == "__main__":
     url = sys.argv[1]
 
     request = request.Request(url)
-    with request.urlopen(request) as response:
+    with request.Request.urlopen(request) as response:
         header = response.info()
         print(header.get('X-Request-Id'))
