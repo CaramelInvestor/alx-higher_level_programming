@@ -11,7 +11,7 @@ if __name__ == "__main__":
     else:
         letter = ""
     data = {"q": letter}
-    response = requests.post("http://0.0.0.0:5000/search_user", data=data)
+    response = requests.post("http://0.0.0.0:5000/search_user", data)
 
     try:
         response_data = response.json()
