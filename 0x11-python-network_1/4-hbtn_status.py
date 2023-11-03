@@ -5,7 +5,7 @@ from urllib.request import Request, urlopen
 if __name__ == "__main__":
     request = Request('https://alx-intranet.hbtn.io/status')
     with urlopen(request) as response:
-        body = response.read()
+        content = response.read()
         print("Body response:")
-        print(f"\t- type: {type(body)}")
-        print(f"\t- content: (body)")
+        print(f"\t- type: {type(content)}")
+        print(f"\t- content: (content)")
